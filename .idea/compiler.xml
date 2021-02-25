@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="account-feign" />
+        <module name="order-biz" />
+        <module name="cloud-common" />
+        <module name="product-service" />
+        <module name="order-service" />
+        <module name="account-service" />
+        <module name="product-feign" />
+        <module name="order-feign" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="cloud-bom" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

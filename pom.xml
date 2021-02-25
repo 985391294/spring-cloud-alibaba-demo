@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.tqz</groupId>
+    <artifactId>spring-cloud-alibaba-demo</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>account-biz</module>
+        <module>cloud-common</module>
+        <module>product-biz</module>
+        <module>order-biz</module>
+        <module>order-biz/order-service</module>
+        <module>order-biz/order-feign</module>
+    </modules>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <spring-boot.version>2.3.4.RELEASE</spring-boot.version>
+        <spring-cloud.version>Hoxton.SR3</spring-cloud.version>
+        <spring-cloud-alibaba.version>2.2.5.RELEASE</spring-cloud-alibaba.version>
+        <spring-cloud-starter-stream-rocketmq.version>2.2.5.RELEASE</spring-cloud-starter-stream-rocketmq.version>
+        <spring-cloud-openfeign.version>2.2.2.RELEASE</spring-cloud-openfeign.version>
+        <rocketmq.version>2.1.0</rocketmq.version>
+        <encoding>UTF-8</encoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <cloud-common.version>1.0-SNAPSHOT</cloud-common.version>
+        <mybatis-plus.version>3.1.1</mybatis-plus.version>
+        <mysql.version>5.1.47</mysql.version>
+        <cloud-alibaba.version>1.0.0</cloud-alibaba.version>
+        <swagger.version>2.9.2</swagger.version>
+        <hutool.version>4.1.19</hutool.version>
+        <alibaba.fastjson.version>1.2.60</alibaba.fastjson.version>
+    </properties>
+
+    <dependencyManagement>
+
+        <!-- Spring Boot 依赖 -->
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- Spring Cloud 依赖 -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- Spring Cloud Alibaba 依赖-->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- Spring Cloud RocketMQ -->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-starter-stream-rocketmq</artifactId>
+                <version>${spring-cloud-starter-stream-rocketmq.version}</version>
+            </dependency>
+
+            <!-- spring-cloud-starter-stream-rocketmq里面内置的rocketmq-spring-boot-starter为2.0.2版本太低，所以重新添加一下依赖 -->
+            <dependency>
+                <groupId>org.apache.rocketmq</groupId>
+                <artifactId>rocketmq-spring-boot-starter</artifactId>
+                <version>${rocketmq.version}</version>
+            </dependency>
+
+            <!-- Mysql驱动 -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
+            </dependency>
+
+            <!-- Mybatis-Plus -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+
+            <!-- Swagger2 -->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+
+            <!-- hutool工具包 -->
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+
+            <!-- fastjson -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${alibaba.fastjson.version}</version>
+            </dependency>
+
+            <!-- cloud-common 版本 -->
+            <dependency>
+                <groupId>com.tqz</groupId>
+                <artifactId>cloud-common</artifactId>
+                <version>${cloud-common.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.tqz</groupId>
+                <artifactId>account-feign</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.tqz</groupId>
+                <artifactId>product-feign</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+
+            <!--    <dependency>
+           <groupId>com.jianzh5.cloud</groupId>
+           <artifactId>cloud-security</artifactId>
+           <version>${cloud-alibaba.version}</version>
+       </dependency>-->
+
+        </dependencies>
+    </dependencyManagement>
+
+</project>
