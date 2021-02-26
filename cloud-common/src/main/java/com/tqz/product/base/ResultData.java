@@ -7,7 +7,7 @@ import lombok.Data;
 /**
  * <p>
  * 公共返回类
- * </p
+ * </p>
  *
  * @author tianqingzhao
  * @since 2021/2/25 11:15

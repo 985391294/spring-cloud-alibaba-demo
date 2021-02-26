@@ -6,7 +6,7 @@ import java.util.concurrent.ThreadLocalRandom;
 /**
  * <p>
  * 高性能UUID工具类 copy from mica
- * </p
+ * </p>
  *
  * @author tianqingzhao
  * @since 2021/2/25 9:59

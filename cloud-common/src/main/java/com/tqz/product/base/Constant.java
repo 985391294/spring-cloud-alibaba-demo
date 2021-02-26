@@ -3,7 +3,7 @@ package com.tqz.product.base;
 /**
  * <p>
  * 系统公共常量
- * </p
+ * </p>
  *
  * @author tianqingzhao
  * @since 2021/2/25 11:15

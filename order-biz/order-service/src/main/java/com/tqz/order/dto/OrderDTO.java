@@ -8,7 +8,7 @@ import java.math.BigDecimal;
 /**
  * <p>
  * 订单DTO
- * </p
+ * </p>
  *
  * @author tianqingzhao
  * @since 2021/2/26 10:00

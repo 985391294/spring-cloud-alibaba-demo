@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * <p>
  * Mybatis-Plus配置
- * </p
+ * </p>
  *
  * @author tianqingzhao
  * @since 2021/2/25 10:14

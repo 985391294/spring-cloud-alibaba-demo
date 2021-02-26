@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * <p>
  * Mybatis-Plus配置类
- * </p
+ * </p>
  *
  * @author tianqingzhao
  * @since 2021/2/26 9:54

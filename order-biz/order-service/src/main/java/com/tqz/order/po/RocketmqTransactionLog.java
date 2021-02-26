@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 /**
  * <p>
  * rocketmq事务日志实体类
- * </p
+ * </p>
  *
  * @author tianqingzhao
  * @since 2021/2/26 10:01

@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 /**
  * <p>
  * Product实体类
- * </p
+ * </p>
  *
  * @author tianqingzhao
  * @since 2021/2/25 10:14
