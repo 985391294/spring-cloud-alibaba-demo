@@ -7,6 +7,14 @@ import lombok.Data;
 
 import java.math.BigDecimal;
 
+/**
+ * <p>
+ * order实体类
+ * </p
+ *
+ * @author tianqingzhao
+ * @since 2021/2/26 10:01
+ */
 @Data
 @TableName("t_order")
 public class Order {

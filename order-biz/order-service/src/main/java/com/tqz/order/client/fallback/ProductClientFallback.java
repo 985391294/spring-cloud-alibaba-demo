@@ -8,12 +8,11 @@ import lombok.extern.slf4j.Slf4j;
 
 /**
  * <p>
- * <code>ProductClientFallback</code>
- * </p>
- * Description:
- * 熔断
- * @author jianzh5
- * @date 2020/10/13 15:41
+ * ProductClientFallback
+ * </p
+ *
+ * @author tianqingzhao
+ * @since 2021/2/26 9:58
  */
 @Slf4j
 public class ProductClientFallback implements ProductClient {

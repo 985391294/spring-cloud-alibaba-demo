@@ -6,9 +6,12 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 
 /**
+ * <p>
  * 接口传输层
- * @author JAVA日知录
- * @date 2019/12/4 16:27
+ * </p
+ *
+ * @author tianqingzhao
+ * @since 2021/2/26 9:57
  */
 @Data
 public class AccountDTO implements Serializable {

@@ -7,8 +7,12 @@ import org.apache.ibatis.annotations.Param;
 import java.math.BigDecimal;
 
 /**
+ * <p>
  * Account Dao层
- * @author JAVA日知录
+ * </p
+ *
+ * @author tianqingzhao
+ * @since 2021/2/26 9:55
  */
 public interface AccountMapper extends BaseMapper<Account> {
 

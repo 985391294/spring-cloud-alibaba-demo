@@ -9,11 +9,13 @@ import java.math.BigDecimal;
 
 /**
  * <p>
- * <code>AccountFeign</code>
- * </p>
- * Description:
- * @author JAVA日知录
+ * AccountFeign
+ * </p
+ *
+ * @author tianqingzhao
+ * @since 2021/2/26 9:56
  */
+
 @FeignClient(name = "account-service")
 public interface AccountApi {
 

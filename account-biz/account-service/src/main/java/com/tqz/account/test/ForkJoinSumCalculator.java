@@ -7,12 +7,11 @@ import java.util.stream.LongStream;
 
 /**
  * <p>
- * <code>ForkJoinSumCalculator</code>
- * </p>
- * Description:
  *
- * @author jianzh5
- * @date 2020/3/18 14:17
+ * </p
+ *
+ * @author tianqingzhao
+ * @since 2021/2/26 9:56
  */
 public class ForkJoinSumCalculator extends RecursiveTask<Long> {
     private final long[] numbers;

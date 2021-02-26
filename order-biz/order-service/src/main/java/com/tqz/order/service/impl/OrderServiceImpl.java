@@ -26,12 +26,11 @@ import java.util.UUID;
 
 /**
  * <p>
- * <code>OrderServiceImpl</code>
- * </p>
- * Description:
  *
- * @author jianzh5
- * @date 2019/12/16 16:56
+ * </p
+ *
+ * @author tianqingzhao
+ * @since 2021/2/26 10:01
  */
 @Service
 @Log4j2

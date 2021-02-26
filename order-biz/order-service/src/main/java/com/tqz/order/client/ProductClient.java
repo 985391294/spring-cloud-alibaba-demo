@@ -7,12 +7,11 @@ import org.springframework.stereotype.Component;
 
 /**
  * <p>
- * <code>ProductClient</code>
- * </p>
- * Description:
+ * ProductClient
+ * </p
  *
- * @author jianzh5
- * @date 2020/11/30 14:50
+ * @author tianqingzhao
+ * @since 2021/2/26 9:58
  */
 @Component
 @FeignClient(name = "product-service",fallbackFactory = ProductClientFallbackFactory.class)

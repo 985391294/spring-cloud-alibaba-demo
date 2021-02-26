@@ -10,12 +10,11 @@ import java.math.BigDecimal;
 
 /**
  * <p>
- * <code>AccountFeignFallback</code>
- * </p>
- * Description:
- * 熔断
- * @author jianzh5
- * @date 2020/10/13 15:41
+ * AccountFeignFallback
+ * </p
+ *
+ * @author tianqingzhao
+ * @since 2021/2/26 9:58
  */
 @Slf4j
 public class AccountClientFallback implements AccountClient {

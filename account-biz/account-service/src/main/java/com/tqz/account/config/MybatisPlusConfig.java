@@ -11,7 +11,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author JAVA日知录
+ * <p>
+ * Mybatis-Plus配置类
+ * </p
+ *
+ * @author tianqingzhao
+ * @since 2021/2/26 9:54
  */
 @Configuration
 @MapperScan("com.tqz.account.mapper")

@@ -8,12 +8,11 @@ import static java.util.stream.Collectors.*;
 
 /**
  * <p>
- * <code>StreamTest</code>
- * </p>
- * Description:
  *
- * @author jianzh5
- * @date 2020/3/16 11:30
+ * </p
+ *
+ * @author tianqingzhao
+ * @since 2021/2/26 9:56
  */
 public class StreamTest {
     public static void main(String[] args) {

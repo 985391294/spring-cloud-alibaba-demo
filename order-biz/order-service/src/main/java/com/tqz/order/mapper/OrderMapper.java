@@ -5,8 +5,12 @@ import org.apache.ibatis.annotations.Param;
 import com.tqz.order.po.*;
 
 /**
+ * <p>
  * Account Dao层
- * @author JAVA日知录
+ * </p
+ *
+ * @author tianqingzhao
+ * @since 2021/2/26 10:00
  */
 public interface OrderMapper extends BaseMapper<Order> {
     /**

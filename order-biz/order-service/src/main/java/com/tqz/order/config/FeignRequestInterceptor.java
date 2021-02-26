@@ -15,12 +15,11 @@ import java.util.UUID;
 
 /**
  * <p>
- * <code>FeignRequestInterceptor</code>
- * </p>
- * Description:
  * 微服务之间feign调用请求头丢失的问题
- * @author jianzh5
- * @date 2020/3/24 9:28
+ * </p
+ *
+ * @author tianqingzhao
+ * @since 2021/2/26 9:59
  */
 @Configuration
 @Slf4j

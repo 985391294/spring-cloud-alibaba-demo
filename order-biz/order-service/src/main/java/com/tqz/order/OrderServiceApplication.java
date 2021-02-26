@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * <p>
- * <code>OrderServiceApplication</code>
- * </p>
- * @author JAVA日知录   git clone git://github.com/fengjiachun/Jupiter.git
- * Description:
  * 订单服务启动类
+ * </p
+ *
+ * @author tianqingzhao
+ * @since 2021/2/26 10:02
  */
 @SpringBootApplication/*(scanBasePackages = {"com.javadaily.product","com.javadaily.order"})*/
 @EnableDiscoveryClient

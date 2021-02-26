@@ -7,12 +7,11 @@ import org.springframework.stereotype.Component;
 
 /**
  * <p>
- * <code>ProductClientFallbackFactory</code>
- * </p>
- * Description:
+ * ProductClientFallbackFactory
+ * </p
  *
- * @author jianzh5
- * @date 2020/10/13 15:43
+ * @author tianqingzhao
+ * @since 2021/2/26 9:58
  */
 @Component
 public class ProductClientFallbackFactory implements FallbackFactory<ProductClient> {

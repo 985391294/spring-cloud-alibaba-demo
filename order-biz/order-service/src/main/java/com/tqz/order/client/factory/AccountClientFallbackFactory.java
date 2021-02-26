@@ -7,12 +7,11 @@ import org.springframework.stereotype.Component;
 
 /**
  * <p>
- * <code>AccountFeignFallbackFactory</code>
- * </p>
- * Description:
+ * AccountFeignFallbackFactory
+ * </p
  *
- * @author jianzh5
- * @date 2020/10/13 15:43
+ * @author tianqingzhao
+ * @since 2021/2/26 9:58
  */
 @Component
 public class AccountClientFallbackFactory implements FallbackFactory<AccountClient> {

@@ -6,10 +6,12 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 
 /**
- * Description:
+ * <p>
  * 订单DTO
- * @author jianzh5
- * @date 2019/12/16 16:39
+ * </p
+ *
+ * @author tianqingzhao
+ * @since 2021/2/26 10:00
  */
 @Data
 public class OrderDTO implements Serializable {

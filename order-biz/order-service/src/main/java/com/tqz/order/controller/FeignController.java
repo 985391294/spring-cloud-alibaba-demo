@@ -6,9 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @author JAVA日知录
- * @date 2019/12/3 18:53
+ * <p>
+ *
+ * </p
+ *
+ * @author tianqingzhao
+ * @since 2021/2/26 9:59
  */
+
 @Slf4j
 @RestController
 public class FeignController {

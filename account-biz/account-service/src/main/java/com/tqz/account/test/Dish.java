@@ -5,12 +5,11 @@ import lombok.Data;
 
 /**
  * <p>
- * <code>Dish</code>
- * </p>
- * Description:
  *
- * @author jianzh5
- * @date 2020/3/16 11:28
+ * </p
+ *
+ * @author tianqingzhao
+ * @since 2021/2/26 9:56
  */
 @Data
 @AllArgsConstructor

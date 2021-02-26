@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
  * </p
  *
  * @author tianqingzhao
- * @since 2021/2/25 10:16
+ * @since 2021/2/26 10:02
  */
 @FeignClient(value = "product-service")
 public interface ProductFeign {

@@ -12,7 +12,7 @@ import java.math.BigDecimal;
  * </p
  *
  * @author tianqingzhao
- * @since 2021/2/25 10:17
+ * @since 2021/2/26 10:02
  */
 @Data
 @ApiModel(value = "产品封装类ProductDTO",description = "产品相关信息封装，用于接口传参")

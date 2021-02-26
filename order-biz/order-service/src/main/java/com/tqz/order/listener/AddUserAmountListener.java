@@ -17,12 +17,11 @@ import com.tqz.order.po.*;
 
 /**
  * <p>
- * <code>AddUserAmountListener</code>
- * </p>
- * Description:
  * 监听事务消息
- * @author jianzh5
- * @date 2020/4/1 15:36
+ * </p
+ *
+ * @author tianqingzhao
+ * @since 2021/2/26 10:00
  */
 @Slf4j
 @RocketMQTransactionListener

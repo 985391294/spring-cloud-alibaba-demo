@@ -9,12 +9,11 @@ import java.util.stream.Collector;
 
 /**
  * <p>
- * <code>ToListCollector</code>
- * </p>
- * Description:
  *
- * @author jianzh5
- * @date 2020/3/18 9:23
+ * </p
+ *
+ * @author tianqingzhao
+ * @since 2021/2/26 9:55
  */
 public class ToListCollector<T> implements Collector<T, List<T>,List<T>> {
     @Override
