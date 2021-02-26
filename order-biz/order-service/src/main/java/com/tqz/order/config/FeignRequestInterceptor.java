@@ -21,7 +21,7 @@ import java.util.UUID;
  * @author tianqingzhao
  * @since 2021/2/26 9:59
  */
-@Configuration
+//@Configuration
 @Slf4j
 public class FeignRequestInterceptor implements RequestInterceptor {
     /**

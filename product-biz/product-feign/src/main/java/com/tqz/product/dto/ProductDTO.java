@@ -15,8 +15,9 @@ import java.math.BigDecimal;
  * @since 2021/2/26 10:02
  */
 @Data
-@ApiModel(value = "产品封装类ProductDTO",description = "产品相关信息封装，用于接口传参")
+@ApiModel(value = "产品封装类ProductDTO", description = "产品相关信息封装，用于接口传参")
 public class ProductDTO {
+
     @ApiModelProperty(value = "产品主键")
     private Integer id;
     @ApiModelProperty(value = "产品编码")

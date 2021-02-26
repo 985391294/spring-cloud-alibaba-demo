@@ -1,4 +1,4 @@
-package com.tqz.product.utils;
+package com.tqz.common.utils;
 
 import java.nio.charset.StandardCharsets;
 import java.util.concurrent.ThreadLocalRandom;

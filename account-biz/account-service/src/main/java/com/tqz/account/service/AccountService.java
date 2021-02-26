@@ -2,6 +2,7 @@ package com.tqz.account.service;
 
 
 import com.tqz.account.dto.AccountDTO;
+import com.tqz.common.base.ResultData;
 
 import java.math.BigDecimal;
 
@@ -28,5 +29,5 @@ public interface AccountService {
     AccountDTO selectByCode(String accountCode);
 
     /**扣减账户余额*/
-    void reduceAccount(String accountCode, BigDecimal amount);
+    ResultData reduceAccount(String accountCode, BigDecimal amount);
 }

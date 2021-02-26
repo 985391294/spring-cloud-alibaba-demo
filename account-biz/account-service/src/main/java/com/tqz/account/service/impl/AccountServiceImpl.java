@@ -4,6 +4,7 @@ import com.tqz.account.mapper.AccountMapper;
 import com.tqz.account.dto.AccountDTO;
 import com.tqz.account.po.Account;
 import com.tqz.account.service.AccountService;
+import com.tqz.common.base.ResultData;
 import io.seata.core.context.RootContext;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -11,7 +12,9 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.client.RestTemplate;
 
+import javax.xml.transform.Result;
 import java.math.BigDecimal;
 
 /**
@@ -58,7 +61,7 @@ public class AccountServiceImpl implements AccountService {
 
     @Transactional(rollbackFor = RuntimeException.class)
     @Override
-    public void reduceAccount(String accountCode, BigDecimal amount) {
+    public ResultData reduceAccount(String accountCode, BigDecimal amount) {
         log.info("Account XID is: {}", RootContext.getXID());
         Account account = accountMapper.selectByCode(accountCode);
         if(null == account){
@@ -69,6 +72,11 @@ public class AccountServiceImpl implements AccountService {
             throw new RuntimeException("can't reduce amount,account'amount is less than reduce amount");
         }
         account.setAmount(subAmount);
-        accountMapper.updateById(account);
+        int result = accountMapper.updateById(account);
+        if (result > 0) {
+            return ResultData.success("扣减账户余额成功！");
+        } else {
+            return ResultData.fail("扣减账户余额失败！");
+        }
     }
 }

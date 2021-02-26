@@ -1,5 +1,6 @@
 package com.tqz.product.service;
 
+import com.tqz.common.base.ResultData;
 import com.tqz.product.dto.ProductDTO;
 
 /**
@@ -11,6 +12,7 @@ import com.tqz.product.dto.ProductDTO;
  * @since 2021/2/25 10:15
  */
 public interface ProductService {
+
     /**
      * 新增产品
      */
@@ -34,5 +36,5 @@ public interface ProductService {
     /**
      * 扣减库存
      */
-    void deduct(String productCode, Integer count);
+    ResultData deduct(String productCode, Integer count);
 }

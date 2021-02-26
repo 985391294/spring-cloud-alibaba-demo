@@ -1,6 +1,5 @@
 package com.tqz.order.controller;
 
-import com.tqz.order.client.AccountClient;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,8 +16,8 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 @RestController
 public class FeignController {
-    @Autowired
-    private AccountClient accountClient;
+  /*  @Autowired
+    private AccountClient accountClient;*/
 
     /*@Autowired
     private ProductClient productClient;*/

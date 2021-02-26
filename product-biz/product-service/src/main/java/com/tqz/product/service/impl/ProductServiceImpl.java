@@ -1,5 +1,6 @@
 package com.tqz.product.service.impl;
 
+import com.tqz.common.base.ResultData;
 import com.tqz.product.dto.ProductDTO;
 import com.tqz.product.mapper.ProductMapper;
 import com.tqz.product.po.Product;
@@ -58,7 +59,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Transactional(rollbackFor = RuntimeException.class)
     @Override
-    public void deduct(String productCode, Integer deductCount) {
+    public ResultData deduct(String productCode, Integer deductCount) {
         log.info("PRODUCT XID is: {}", RootContext.getXID());
         Product product = productMapper.selectByCode(productCode);
         if (null == product) {
@@ -69,7 +70,12 @@ public class ProductServiceImpl implements ProductService {
             throw new RuntimeException("can't deduct product,product's count is less than deduct count");
         }
         product.setCount(surplus);
-        productMapper.updateById(product);
-        int i = 1 / 0;
+        int result = productMapper.updateById(product);
+//        int i = 1 / 0;
+        if (result > 0) {
+            return ResultData.success("下单成功！");
+        } else {
+            return ResultData.fail("下单失败！");
+        }
     }
 }

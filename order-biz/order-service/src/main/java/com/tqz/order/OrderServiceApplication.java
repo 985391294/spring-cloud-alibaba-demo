@@ -4,7 +4,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
-import org.springframework.web.bind.annotation.RestController;
 
 /**
  * <p>
@@ -14,11 +13,12 @@ import org.springframework.web.bind.annotation.RestController;
  * @author tianqingzhao
  * @since 2021/2/26 10:02
  */
-@SpringBootApplication/*(scanBasePackages = {"com.javadaily.product","com.javadaily.order"})*/
+@SpringBootApplication(scanBasePackages = {"com.tqz.order", "com.tqz.common"})
 @EnableDiscoveryClient
-@EnableFeignClients/*(basePackages = "com.javadaily.account.*")*/
+@EnableFeignClients(basePackages = {"com.tqz.account", "com.tqz.product"})
 //@EnableBinding({Source.class}) //发送消息
 public class OrderServiceApplication {
+
     public static void main(String[] args) {
         SpringApplication.run(OrderServiceApplication.class, args);
     }

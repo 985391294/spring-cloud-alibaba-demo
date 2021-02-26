@@ -2,12 +2,11 @@ package com.tqz.order.controller;
 
 import com.tqz.order.dto.OrderDTO;
 import com.tqz.order.service.OrderService;
-import com.tqz.product.base.ResultData;
+import com.tqz.common.base.ResultData;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -34,8 +33,7 @@ public class OrderController {
         log.info("create order:{}",orderDTO);
         orderDTO.setOrderNo(UUID.randomUUID().toString());
         orderDTO.setAmount(orderDTO.getPrice().multiply(new BigDecimal(orderDTO.getCount())));
-        orderService.createOrder(orderDTO);
-        return ResultData.success("create order success");
+        return orderService.createOrder(orderDTO);
     }
 
 

@@ -1,6 +1,11 @@
 mybatis-plus:
   mapper-locations: classpath:/mapper/*Mapper.xml
 
+service:
+  name:
+    account: http://account-service/
+    product: http://product-service/
+
 #security:
 #  oauth2:
 #    resource:

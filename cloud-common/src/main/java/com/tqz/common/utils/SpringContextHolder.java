@@ -1,17 +1,19 @@
-package com.tqz.product.utils;
+package com.tqz.common.utils;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
+import org.springframework.stereotype.Component;
 
 /**
  * <p>
- * 以静态变量保存Spring ApplicationContext, 可在任何代码任何地方任何时候中取出ApplicaitonContext.
+ * 以静态变量保存Spring ApplicationContext, 可在任何代码任何地方任何时候中取出 {@link ApplicationContext}
  * </p>
  *
  * @author tianqingzhao
  * @since 2021/2/25 9:59
  */
+@Component
 public class SpringContextHolder implements ApplicationContextAware {
 
     private static ApplicationContext applicationContext;

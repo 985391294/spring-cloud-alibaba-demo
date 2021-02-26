@@ -33,7 +33,7 @@
         <mysql.version>5.1.47</mysql.version>
         <cloud-alibaba.version>1.0.0</cloud-alibaba.version>
         <swagger.version>2.9.2</swagger.version>
-        <hutool.version>4.1.19</hutool.version>
+        <hutool.version>4.1.9</hutool.version>
         <alibaba.fastjson.version>1.2.60</alibaba.fastjson.version>
     </properties>
 

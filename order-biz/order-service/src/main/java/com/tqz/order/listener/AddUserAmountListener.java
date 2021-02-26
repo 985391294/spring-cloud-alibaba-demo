@@ -2,7 +2,7 @@ package com.tqz.order.listener;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.tqz.order.mapper.RocketMqTransactionLogMapper;
-import com.tqz.product.base.Constant;
+import com.tqz.common.base.Constant;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.rocketmq.spring.annotation.RocketMQTransactionListener;

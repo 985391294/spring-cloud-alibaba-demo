@@ -1,4 +1,4 @@
-package com.tqz.product.interceptor;
+package com.tqz.common.interceptor;
 
 import feign.RequestInterceptor;
 import feign.RequestTemplate;

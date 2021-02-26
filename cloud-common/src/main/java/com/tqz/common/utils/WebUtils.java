@@ -1,4 +1,4 @@
-package com.tqz.product.utils;
+package com.tqz.common.utils;
 
 import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;

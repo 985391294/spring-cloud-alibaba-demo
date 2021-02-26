@@ -1,6 +1,6 @@
-package com.tqz.product.autoconfig;
+package com.tqz.common.autoconfig;
 
-import com.tqz.product.properties.SwaggerProperties;
+import com.tqz.common.properties.SwaggerProperties;
 import io.swagger.annotations.Api;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;

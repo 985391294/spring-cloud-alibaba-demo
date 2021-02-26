@@ -1,8 +1,7 @@
 package com.tqz.product.controller;
 
 import com.alibaba.csp.sentinel.annotation.SentinelResource;
-import com.tqz.product.api.ProductFeign;
-import com.tqz.product.base.ResultData;
+import com.tqz.common.base.ResultData;
 import com.tqz.product.dto.ProductDTO;
 import com.tqz.product.service.ProductService;
 import io.swagger.annotations.Api;
@@ -25,15 +24,15 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @Log4j2
 @Api(tags = "product模块")
+@RequestMapping("product")
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
-public class ProductController implements ProductFeign {
+public class ProductController {
     private final ProductService productService;
 
 
     @ApiOperation("添加产品")
-    @Override
-    @PostMapping("/product/insert")
-    @ApiImplicitParam(name = "productDTO",value = "产品详细说明", required = true,paramType = "body")
+    @PostMapping("/insert")
+    @ApiImplicitParam(name = "productDTO", value = "产品详细说明", required = true, paramType = "body")
     public ResultData<String> insert(@RequestBody ProductDTO productDTO) {
         log.info("insert product:{}", productDTO);
         productService.insertProduct(productDTO);
@@ -41,8 +40,7 @@ public class ProductController implements ProductFeign {
     }
 
     @ApiOperation(value = "根据产品编码删除对应产品")
-    @Override
-    @PostMapping("/product/delete")
+    @PostMapping("/delete")
     @ApiImplicitParam(name = "productCode", value = "产品编码", required = true, paramType = "query")
     public ResultData<String> delete(@RequestParam String productCode) {
         log.info("delete product,productCode is {}", productCode);
@@ -50,8 +48,7 @@ public class ProductController implements ProductFeign {
         return ResultData.success("delete product succeed");
     }
 
-    @Override
-    @PostMapping("/product/update")
+    @PostMapping("/update")
     @ApiOperation("更新产品信息")
     public ResultData<String> update(@RequestBody ProductDTO productDTO) {
         log.info("update product:{}", productDTO);
@@ -59,8 +56,7 @@ public class ProductController implements ProductFeign {
         return ResultData.success("update product succeed");
     }
 
-    @Override
-    @GetMapping("/product/getByCode/{productCode}")
+    @GetMapping("/getByCode/{productCode}")
     @SentinelResource(value = "/product/getByCode", fallback = "fallbackHandler")
     @ApiOperation(value = "根据产品编码查找对应的产品")
     @ApiImplicitParam(name = "productCode", value = "产品编码", required = true, paramType = "path")
@@ -70,8 +66,7 @@ public class ProductController implements ProductFeign {
         return ResultData.success(productDTO);
     }
 
-    @PostMapping("/product/deduct")
-    @Override
+    @PostMapping("/deduct")
     @ApiOperation(value = "扣减库存")
     @ApiImplicitParams({
             @ApiImplicitParam(name = "productCode", value = "产品编码", required = true, paramType = "query"),
@@ -79,8 +74,7 @@ public class ProductController implements ProductFeign {
     })
     public ResultData<String> deduct(@RequestParam("productCode") String productCode, @RequestParam("count") Integer count) {
         log.info("deduct product, productCode is :{},count is {} ", productCode, count);
-        productService.deduct(productCode, count);
-        return ResultData.success("success");
+        return productService.deduct(productCode, count);
     }
 
     /**

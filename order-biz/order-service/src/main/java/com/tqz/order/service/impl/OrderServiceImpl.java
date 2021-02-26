@@ -1,15 +1,16 @@
 package com.tqz.order.service.impl;
 
+import com.tqz.common.exception.ServiceException;
 import com.tqz.order.dto.OrderDTO;
 import com.tqz.order.mapper.OrderMapper;
 import com.tqz.order.mapper.RocketMqTransactionLogMapper;
 import com.tqz.order.po.Order;
 import com.tqz.order.po.RocketmqTransactionLog;
 import com.tqz.order.service.OrderService;
-import com.tqz.account.api.AccountApi;
-import com.tqz.product.api.ProductFeign;
-import com.tqz.product.base.Constant;
-import com.tqz.product.message.UserAddMoneyDTO;
+import com.tqz.common.base.ResultData;
+import com.tqz.common.base.Constant;
+import com.tqz.common.base.ReturnCode;
+import com.tqz.common.message.UserAddMoneyDTO;
 import io.seata.core.context.RootContext;
 import io.seata.spring.annotation.GlobalTransactional;
 import lombok.RequiredArgsConstructor;
@@ -18,15 +19,19 @@ import org.apache.rocketmq.spring.core.RocketMQTemplate;
 import org.apache.rocketmq.spring.support.RocketMQHeaders;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.UUID;
 
 /**
  * <p>
- *
+ * 订单的服务实现类
  * </p>
  *
  * @author tianqingzhao
@@ -34,27 +39,47 @@ import java.util.UUID;
  */
 @Service
 @Log4j2
+@Transactional
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class OrderServiceImpl implements OrderService {
-    private final AccountApi accountApi;
-    private final ProductFeign productFeign;
+
     private final OrderMapper orderMapper;
     private final RocketMQTemplate rocketMQTemplate;
     private final RocketMqTransactionLogMapper rocketMqTransactionLogMapper;
+    private final RestTemplate restTemplate;
+
+    @Value("${service.name.account}")
+    private String serviceNameAccount;
+
+    @Value("${service.name.product}")
+    private String serviceNameProduct;
 
     @GlobalTransactional(name = "TX_ORDER_CREATE")
-    @Transactional
     @Override
-    public void createOrder(OrderDTO orderDTO) {
+    public ResultData createOrder(OrderDTO orderDTO) {
         Order order = new Order();
-        BeanUtils.copyProperties(orderDTO,order);
-        //本地存储Order
+        BeanUtils.copyProperties(orderDTO, order);
+        // 本地存储Order
         this.saveOrder(order);
         log.info("ORDER XID is: {}", RootContext.getXID());
-        //账户余额扣减
-        accountApi.reduce(orderDTO.getAccountCode(), orderDTO.getAmount());
-        //库存扣减
-        productFeign.deduct(orderDTO.getProductCode(),orderDTO.getCount());
+
+        // 更改為feign远程调用
+        MultiValueMap accountParamsMap = new LinkedMultiValueMap();
+        accountParamsMap.add("accountCode", orderDTO.getAccountCode());
+        accountParamsMap.add("amount", orderDTO.getAmount());
+
+        MultiValueMap productParamsMap = new LinkedMultiValueMap();
+        productParamsMap.add("productCode", orderDTO.getProductCode());
+        productParamsMap.add("count", orderDTO.getCount());
+
+        ResultData resultData = restTemplate.postForObject(serviceNameAccount + "account/reduce", accountParamsMap, ResultData.class);
+        if (resultData.getCode() == ReturnCode.RC100.getCode()) {
+            ResultData rs = restTemplate.postForObject(serviceNameProduct + "product/deduct", productParamsMap, ResultData.class);
+            if (rs.getCode() == ReturnCode.RC100.getCode()) {
+                return ResultData.success("下单成功！");
+            }
+        }
+        throw new ServiceException("下单失败！");
     }
 
 

@@ -2,10 +2,9 @@ package com.tqz.account.controller;
 
 import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.alibaba.csp.sentinel.slots.block.BlockException;
-import com.tqz.account.api.AccountApi;
 import com.tqz.account.dto.AccountDTO;
 import com.tqz.account.service.AccountService;
-import com.tqz.product.base.ResultData;
+import com.tqz.common.base.ResultData;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
@@ -26,40 +25,36 @@ import java.math.BigDecimal;
 @RestController
 @Log4j2
 @Api(tags = "account接口")
+@RequestMapping("account")
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
-public class AccountController implements AccountApi {
+public class AccountController {
 
     private final AccountService accountService;
 
-    @Override
-    @PostMapping("/account/insert")
+    @PostMapping("/insert")
     public ResultData<String> insert(@RequestBody AccountDTO accountDTO){
         log.info("insert account:{}",accountDTO);
         accountService.insertAccount(accountDTO);
         return ResultData.success("insert account succeed");
     }
 
-    @Override
     @ApiOperation("删除用户")
-    @PostMapping("/account/delete")
+    @PostMapping("/delete")
     public ResultData<String> delete(@RequestParam String accountCode){
         log.info("delete account,accountCode is {}",accountCode);
         accountService.deleteAccount(accountCode);
         return ResultData.success("delete account succeed");
     }
-    @Override
-    @PostMapping("/account/update")
+
+    @PostMapping("/update")
     public  ResultData<String> update(@RequestBody AccountDTO accountDTO){
         log.info("update account:{}",accountDTO);
         accountService.updateAccount(accountDTO);
         return ResultData.success("update account succeed");
     }
 
-
-
-    @Override
     @ApiOperation("select接口")
-    @GetMapping("/account/getByCode")
+    @GetMapping("/getByCode")
     @SentinelResource(value = "getByCode",blockHandler = "handleException")
 //    @PreAuthorize("hasPrivilege('queryAccount')")
     public ResultData getByCode(@RequestParam(required = false) String accountCode){
@@ -72,17 +67,10 @@ public class AccountController implements AccountApi {
         return ResultData.success(accountDTO);
     }
 
-    @Override
-    @PostMapping("/account/reduce")
+    @PostMapping("/reduce")
     public ResultData<String> reduce(@RequestParam("accountCode") String accountCode, @RequestParam("amount") BigDecimal amount){
         log.info("reduce account amount, accountCode is :{},amount is {} ",accountCode,amount);
-        accountService.reduceAccount(accountCode,amount);
-        return ResultData.success("success");
-    }
-
-    @GetMapping("test")
-    public ResultData test() {
-        return ResultData.success("fasdlgj");
+        return accountService.reduceAccount(accountCode,amount);
     }
 
     /**

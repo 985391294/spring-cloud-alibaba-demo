@@ -18,10 +18,15 @@ import java.math.BigDecimal;
 @Data
 @TableName("product")
 public class Product {
-    @TableId(value = "ID",type = IdType.AUTO)
+
+    @TableId(value = "ID", type = IdType.AUTO)
     private Integer id;
+
     private String productCode;
+
     private String productName;
+
     private Integer count;
+
     private BigDecimal price;
 }

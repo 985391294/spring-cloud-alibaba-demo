@@ -1,4 +1,4 @@
-package com.tqz.product.message;
+package com.tqz.common.message;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -20,10 +20,12 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @Builder
 public class UserAddMoneyDTO {
+
     /**
      * 用户编码
      */
     private String userCode;
+
     /**
      * 金额
      */
