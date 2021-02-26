@@ -6,9 +6,12 @@ import com.tqz.account.dto.AccountDTO;
 import java.math.BigDecimal;
 
 /**
+ * <p>
  * Account Service 接口层
- * @author JAVA日知录
- * @date 2019/12/2 15:09
+ * </p
+ *
+ * @author tianqingzhao
+ * @since 2021/2/26 9:26
  */
 public interface AccountService {
 

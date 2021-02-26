@@ -8,10 +8,12 @@ import lombok.Data;
 import java.math.BigDecimal;
 
 /**
- * Description:
- *  用户类
- * @author JAVA日知录
- * @date 2019/12/2 15:06
+ * <p>
+ * 用户类
+ * </p
+ *
+ * @author tianqingzhao
+ * @since 2021/2/26 9:27
  */
 @Data
 @TableName("account")
