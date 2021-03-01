@@ -34,6 +34,7 @@ import java.util.List;
 @ConditionalOnProperty(prefix = SwaggerProperties.SWAGGER_PREFIX, name = "enabled", havingValue = "true")
 @Import({Swagger2DocumentationConfiguration.class})
 public class SwaggerAutoConfiguration {
+
     private static final String VERSION = "1.0.0";
 
     private SwaggerProperties swaggerProperties;
@@ -41,7 +42,6 @@ public class SwaggerAutoConfiguration {
     public SwaggerAutoConfiguration(SwaggerProperties swaggerProperties) {
         this.swaggerProperties = swaggerProperties;
     }
-
 
     /**
      * 创建API
@@ -60,7 +60,6 @@ public class SwaggerAutoConfiguration {
                 .securityContexts(Collections.singletonList(securityContext()));
     }
 
-
     /**
      * 添加摘要信息
      */
@@ -74,11 +73,9 @@ public class SwaggerAutoConfiguration {
                 .build();
     }
 
-
     private ApiKey apiKey() {
         return new ApiKey("Bearer", "Authorization", "header");
     }
-
 
     /**
      * swagger2 认证的安全上下文
@@ -89,7 +86,6 @@ public class SwaggerAutoConfiguration {
                 .forPaths(PathSelectors.any())
                 .build();
     }
-
 
     private List<SecurityReference> defaultAuth() {
         AuthorizationScope authorizationScope = new AuthorizationScope

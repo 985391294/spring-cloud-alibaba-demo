@@ -15,6 +15,7 @@
         <module>order-biz</module>
         <module>order-biz/order-service</module>
         <module>order-biz/order-feign</module>
+        <module>cloud-gateway</module>
     </modules>
 
     <properties>

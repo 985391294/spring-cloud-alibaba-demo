@@ -13,6 +13,7 @@
         <module name="order-service" />
         <module name="account-service" />
         <module name="product-feign" />
+        <module name="cloud-gateway" />
         <module name="order-feign" />
       </profile>
     </annotationProcessing>

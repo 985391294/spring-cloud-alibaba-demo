@@ -22,6 +22,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class RocketmqTransactionLog {
+
     @TableId(value = "ID",type = IdType.AUTO)
     private Integer id;
     private String transactionId;

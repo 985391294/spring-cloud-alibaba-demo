@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
  * @author tianqingzhao
  * @since 2021/2/26 9:59
  */
-
 @Slf4j
 @RestController
 public class FeignController {

@@ -18,6 +18,7 @@ import java.math.BigDecimal;
 @Data
 @TableName("t_order")
 public class Order {
+
     @TableId(value = "ID",type = IdType.AUTO)
     private Integer id;
     private String orderNo;
