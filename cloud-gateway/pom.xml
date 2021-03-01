@@ -36,5 +36,10 @@
             <artifactId>spring-cloud-starter-gateway</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>com.tqz</groupId>
+            <artifactId>cloud-common</artifactId>
+        </dependency>
+
     </dependencies>
 </project>
