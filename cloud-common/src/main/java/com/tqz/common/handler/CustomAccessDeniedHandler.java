@@ -16,12 +16,11 @@ import java.io.IOException;
 */
 /**
  * <p>
- * <code>CustomDeniedHandler</code>
- * </p>
- * Description:
  * 认证过的用户访问无权限资源时的异常
- * @author jianzh5
- * @date 2020/2/29 10:43
+ * </p>
+ *
+ * @author tianqingzhao
+ * @since 2021/3/1 9:44
  *//*
 
 @Slf4j

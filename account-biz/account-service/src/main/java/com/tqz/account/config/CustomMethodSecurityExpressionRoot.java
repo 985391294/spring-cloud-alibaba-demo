@@ -13,14 +13,12 @@ import java.util.Collection;
 */
 /**
  * <p>
- * <code>CustomMethodSecurityExpressionRoot</code>
- * </p>
- * Description:
  * 自定义权限校验
- * @author jianzh5
- * @date 2020/8/6 16:01
+ * </p>
+ *
+ * @author tianqingzhao
+ * @since 2021/3/1 9:48
  *//*
-
 
 public class CustomMethodSecurityExpressionRoot extends SecurityExpressionRoot implements MethodSecurityExpressionOperations {
 

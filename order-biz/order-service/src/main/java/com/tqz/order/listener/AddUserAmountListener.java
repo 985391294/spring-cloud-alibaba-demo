@@ -27,8 +27,10 @@ import com.tqz.order.po.*;
 @RocketMQTransactionListener
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class AddUserAmountListener implements RocketMQLocalTransactionListener {
+
     private final OrderService orderService;
     private final RocketMqTransactionLogMapper rocketMqTransactionLogMapper;
+
     /**
      * 执行本地事务
      */

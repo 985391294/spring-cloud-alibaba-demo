@@ -2,12 +2,11 @@ package com.tqz.account.util;
 
 /**
  * <p>
- * <code>JwtOperator</code>
- * </p>
- * Description:
  * JWT工具类，提供JWT的解密加密操作
- * @author jianzh5
- * @date 2020/2/11 19:54
+ * </p>
+ *
+ * @author tianqingzhao
+ * @since 2021/3/1 9:49
  */
 /*@Slf4j
 @Component

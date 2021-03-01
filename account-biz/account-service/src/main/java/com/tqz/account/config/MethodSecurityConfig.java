@@ -4,17 +4,16 @@ package com.tqz.account.config;
 import org.springframework.security.access.expression.method.MethodSecurityExpressionHandler;
 import org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration;
 
+
 */
 /**
  * <p>
- * <code>MethodSecurityConfig</code>
- * </p>
- * Description:
  * 开启方法校验
- * @author jianzh5
- * @date 2020/8/6 16:07
+ * </p>
+ *
+ * @author tianqingzhao
+ * @since 2021/3/1 9:48
  *//*
-
 
 //@Configuration
 //@EnableGlobalMethodSecurity(prePostEnabled = true)

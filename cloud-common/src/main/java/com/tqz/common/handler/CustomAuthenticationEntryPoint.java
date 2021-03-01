@@ -16,12 +16,11 @@ import java.io.IOException;
 */
 /**
  * <p>
- * <code>CustomAuthenticationEntryPoint</code>
- * </p>
- * Description:
  * 自定义匿名用户访问无权限资源时的异常
- * @author jianzh5
- * @date 2020/2/29 10:33
+ * </p>
+ *
+ * @author tianqingzhao
+ * @since 2021/3/1 9:45
  *//*
 
 @Slf4j

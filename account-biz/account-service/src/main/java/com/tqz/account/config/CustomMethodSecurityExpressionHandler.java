@@ -1,6 +1,5 @@
 /*
-package com.tqz.account.config;*/
-/*
+package com.tqz.account.config;
 package com.javadaily.account.config;
 
 import org.aopalliance.intercept.MethodInvocation;
@@ -10,22 +9,22 @@ import org.springframework.security.authentication.AuthenticationTrustResolver;
 import org.springframework.security.authentication.AuthenticationTrustResolverImpl;
 import org.springframework.security.core.Authentication;
 
-/**
- * <p>
- * <code>CustomMethodSecurityExpressionHandler</code>
- * </p>
- * Description:
- *
- * @author jianzh5
- * @date 2020/8/6 16:06
- *//*
-
 import org.aopalliance.intercept.MethodInvocation;
 import org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler;
 import org.springframework.security.access.expression.method.MethodSecurityExpressionOperations;
 import org.springframework.security.authentication.AuthenticationTrustResolver;
 import org.springframework.security.authentication.AuthenticationTrustResolverImpl;
 import org.springframework.security.core.Authentication;
+
+*/
+/**
+ * <p>
+ *
+ * </p>
+ *
+ * @author tianqingzhao
+ * @since 2021/3/1 9:47
+ *//*
 
 public class CustomMethodSecurityExpressionHandler extends DefaultMethodSecurityExpressionHandler {
 

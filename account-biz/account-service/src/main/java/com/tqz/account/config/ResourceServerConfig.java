@@ -15,15 +15,15 @@ import org.springframework.security.oauth2.provider.token.UserAuthenticationConv
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 
+
 */
 /**
  * <p>
- * <code>ResourceServerConfig</code>
- * </p>
- * Description:
  * 资源服务器配置
- * @author jianzh5
- * @date 2020/2/28 15:38
+ * </p>
+ *
+ * @author tianqingzhao
+ * @since 2021/3/1 9:48
  *//*
 
 //@Configuration
