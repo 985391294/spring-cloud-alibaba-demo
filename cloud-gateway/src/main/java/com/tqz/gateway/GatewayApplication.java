@@ -15,7 +15,7 @@ import org.springframework.cloud.gateway.handler.predicate.*;
  *
  * Spring Cloud Gateway 有三大核心概念：Route（路由）、Predicate（谓词）、Filter（过滤器）。
  * 路由谓词工厂的作用是：符合Predicate的条件，就使用该路由的配置，否则就不管。
- * 一共有以下12大工厂 <a herf:"https://cloud.spring.io/spring-cloud-static/spring-cloud-gateway/2.1.0.RELEASE/single/spring-cloud-gateway.html#gateway-request-predicates-factories"></a>
+ * 一共有以下13大工厂，目前官网只介绍了10种：<a herf:"https://cloud.spring.io/spring-cloud-static/spring-cloud-gateway/2.1.0.RELEASE/single/spring-cloud-gateway.html#gateway-request-predicates-factories"></a>
  * <ul>
  *     <li>AfterRoutePredicateFactory 当请求时的时间After配置的时间时，才转发该请求。
  *     示例：- After=2018-08-16T11:34:42.917822900+08:00[Asia/Shanghai]
