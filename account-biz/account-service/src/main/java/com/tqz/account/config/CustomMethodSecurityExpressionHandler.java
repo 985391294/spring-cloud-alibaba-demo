@@ -25,7 +25,6 @@ import org.springframework.security.core.Authentication;
  * @author tianqingzhao
  * @since 2021/3/1 9:47
  *//*
-
 public class CustomMethodSecurityExpressionHandler extends DefaultMethodSecurityExpressionHandler {
 
     private AuthenticationTrustResolver trustResolver =  new AuthenticationTrustResolverImpl();

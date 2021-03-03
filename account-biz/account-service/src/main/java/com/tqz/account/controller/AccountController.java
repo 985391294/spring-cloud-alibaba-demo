@@ -22,14 +22,14 @@ import java.math.BigDecimal;
  * @author tianqingzhao
  * @since 2021/2/24 14:07
  */
-@RestController
-@Log4j2
 @Api(tags = "account接口")
+@Log4j2
+@RestController
 @RequestMapping("account")
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class AccountController {
 
-    private final AccountService accountService;
+    public final AccountService accountService;
 
     @PostMapping("/insert")
     public ResultData<String> insert(@RequestBody AccountDTO accountDTO){

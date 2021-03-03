@@ -51,3 +51,14 @@ seata:
 #  service:
 #    vgroup-mapping: seata-server-cluster
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+    shutdown:
+      # 优雅停机，默认值为false，不建议开启
+#      enabled: true

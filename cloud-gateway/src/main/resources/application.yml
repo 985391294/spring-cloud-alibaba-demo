@@ -1,11 +1,13 @@
+swagger:
+  basic:
+    enable: true
+    username: tianqingzhao
+    password: 123456
+
 server:
   port: 8090
 spring:
   cloud:
-    nacos:
-      discovery:
-        server-addr: 81.70.157.38:8848
-        namespace: 7a7e435c-73e4-4204-9191-72ee3d4a1767
     gateway:
       discovery:
         locator:
@@ -19,7 +21,19 @@ spring:
           uri: lb://account-service  #lb://** lb://为固定写法，表示开启负载均衡； ** 即服务在Nacos中注册的名字
           predicates: #Path=/product/** 使用"Path Route Predicate Factory"，规则为/product/** 的请求都还转发至微服务product-service中。
             - Path=/account/**
+#          filters:
+#            - name: RequestRateLimiter
+#              args:
+#                redis-rate-limiter.replenishRate: 1 # 允许用户每秒处理多少个请求
+#                redis-rate-limiter.burstCapacity: 3 # 令牌桶的容量，允许在一秒钟内完成的最大请求数
+#                key-resolver: "#{@ipKeyResolver}" # 用于限流的键的解析器的 Bean 对象的名字。它使用 SpEL 表达式根据#{@beanName}从 Spring 容器中获取 Bean 对象。
         - id: order-service # 在所有路由定义中需要唯一，不能重复
           uri: lb://order-service  # lb://** lb://为固定写法，表示开启负载均衡； ** 即服务在Nacos中注册的名字
           predicates: # Path=/product/** 使用"Path Route Predicate Factory"，规则为/product/** 的请求都还转发至微服务product-service中。
             - Path=/order/**
+
+  redis:
+    host: localhost
+    password: 123456
+    database: 0
+    port: 6379

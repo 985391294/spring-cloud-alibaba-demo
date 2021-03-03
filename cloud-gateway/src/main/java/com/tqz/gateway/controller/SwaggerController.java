@@ -14,6 +14,7 @@ import java.util.Optional;
 /**
  * <p>
  * 自定义swagger接口
+ * 项目启动完之后，直接方位 http://ip:端口号/swagger-ui.html
  * </p>
  *
  * @author tianqingzhao

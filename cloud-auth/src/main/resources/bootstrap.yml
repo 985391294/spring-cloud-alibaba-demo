@@ -1,6 +1,6 @@
 spring:
   application:
-    name: cloud-gateway
+    name: cloud-auth
   cloud:
     nacos:
       config:

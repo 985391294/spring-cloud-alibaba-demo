@@ -1,0 +1,8 @@
+swagger:
+  basic:
+    enable: true
+    username: tianqingzhao
+    password: 123456
+
+server:
+  port: 8090

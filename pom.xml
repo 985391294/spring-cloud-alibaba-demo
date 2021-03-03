@@ -16,6 +16,7 @@
         <module>order-biz/order-service</module>
         <module>order-biz/order-feign</module>
         <module>cloud-gateway</module>
+        <module>cloud-auth</module>
     </modules>
 
     <properties>
@@ -34,6 +35,7 @@
         <mysql.version>5.1.47</mysql.version>
         <cloud-alibaba.version>1.0.0</cloud-alibaba.version>
         <swagger.version>2.9.2</swagger.version>
+        <swagger-bootstrap-ui.version>1.9.6</swagger-bootstrap-ui.version>
         <hutool.version>4.1.9</hutool.version>
         <alibaba.fastjson.version>1.2.60</alibaba.fastjson.version>
     </properties>
@@ -82,6 +84,12 @@
                 <version>${rocketmq.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-actuator</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
+
             <!-- Mysql驱动 -->
             <dependency>
                 <groupId>mysql</groupId>
@@ -108,6 +116,13 @@
                 <version>${swagger.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>swagger-bootstrap-ui</artifactId>
+                <version>${swagger-bootstrap-ui.version}</version>
+            </dependency>
+
+
             <!-- hutool工具包 -->
             <dependency>
                 <groupId>cn.hutool</groupId>
@@ -121,6 +136,7 @@
                 <artifactId>fastjson</artifactId>
                 <version>${alibaba.fastjson.version}</version>
             </dependency>
+
 
             <!-- cloud-common 版本 -->
             <dependency>
@@ -149,6 +165,14 @@
 
         </dependencies>
     </dependencyManagement>
+
+ <!--   <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+            <version>${spring-boot.version}</version>
+        </dependency>
+    </dependencies>-->
 
     <build>
         <plugins>

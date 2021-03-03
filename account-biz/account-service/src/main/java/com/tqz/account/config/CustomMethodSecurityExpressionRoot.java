@@ -19,7 +19,6 @@ import java.util.Collection;
  * @author tianqingzhao
  * @since 2021/3/1 9:48
  *//*
-
 public class CustomMethodSecurityExpressionRoot extends SecurityExpressionRoot implements MethodSecurityExpressionOperations {
 
     private static final AntPathMatcher antPathMatcher = new AntPathMatcher();
