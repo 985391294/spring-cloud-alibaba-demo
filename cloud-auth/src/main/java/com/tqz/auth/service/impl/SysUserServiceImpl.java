@@ -16,10 +16,18 @@ import java.util.stream.Collectors;
 
 /**
  * <p>
+<<<<<<< HEAD
  * 系统用户实现类
  *
  * @author tianqingzhao
  * @since 2021/4/6 10:29
+=======
+ *
+ * </p>
+ *
+ * @author tianqingzhao
+ * @since 2021/3/6 15:22
+>>>>>>> origin/master
  */
 @Service
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
@@ -31,11 +39,14 @@ public class SysUserServiceImpl implements ISysUserService {
     private final ISysPermissionService sysPermissionService;
 
     @Override
+<<<<<<< HEAD
     public SysUser selectByUserName(String userName) {
         return sysUserMapper.selectByUserName(userName);
     }
 
     @Override
+=======
+>>>>>>> origin/master
     public SysUser getUserByMobile(String mobile) {
         SysUser sysUser = sysUserMapper.selectByMobile(mobile);
         if(sysUser != null) {
@@ -54,4 +65,8 @@ public class SysUserServiceImpl implements ISysUserService {
         }
         return sysUser;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> origin/master

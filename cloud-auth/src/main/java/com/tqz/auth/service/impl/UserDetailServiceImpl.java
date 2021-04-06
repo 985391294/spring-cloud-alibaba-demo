@@ -6,9 +6,17 @@ import com.tqz.auth.po.SysRole;
 import com.tqz.auth.po.SysUser;
 import com.tqz.auth.service.ISysPermissionService;
 import com.tqz.auth.service.ISysRoleService;
+<<<<<<< HEAD
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
+=======
+import com.tqz.common.base.Constant;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.AuthorityUtils;
+import org.springframework.security.core.userdetails.User;
+>>>>>>> origin/master
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -22,10 +30,18 @@ import java.util.stream.Collectors;
 
 /**
  * <p>
+<<<<<<< HEAD
  * 自定义用户实现类
  *
  * @author tianqingzhao
  * @since 2021/4/6 10:29
+=======
+ * 自定义用户实现
+ * </p>
+ *
+ * @author tianqingzhao
+ * @since 2021/3/6 14:59
+>>>>>>> origin/master
  */
 @Service
 public class UserDetailServiceImpl implements UserDetailsService {
@@ -39,6 +55,7 @@ public class UserDetailServiceImpl implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
+<<<<<<< HEAD
         /*// 获取本地用户
         SysUser sysUser = sysUserMapper.selectByUserName(userName);
         if (sysUser != null) {
@@ -62,11 +79,29 @@ public class UserDetailServiceImpl implements UserDetailsService {
                     AuthorityUtils.createAuthorityList(user.getRole()));
         } else {
             throw new UsernameNotFoundException("用户[" + userName + "]不存在");
+=======
+        //获取本地用户
+        SysUser sysUser = sysUserMapper.selectByUserName(userName);
+        if(sysUser != null){
+            /*//获取当前用户的所有角色
+            List<SysRole> roleList = sysRoleService.listRolesByUserId(sysUser.getId());
+            sysUser.setRoles(roleList.stream().map(SysRole::getRoleCode).collect(Collectors.toList()));
+            List<Integer> roleIds = roleList.stream().map(SysRole::getId).collect(Collectors.toList());
+            //获取所有角色的权限
+            List<SysPermission> permissionList = sysPermissionService.listPermissionsByRoles(roleIds);
+            sysUser.setPermissions(permissionList.stream().map(SysPermission::getUrl).collect(Collectors.toList()));*/
+            //构建oauth2的用户
+//            return buildUserDetails(sysUser);
+            return new User(sysUser.getUsername(), sysUser.getPassword(), AuthorityUtils.createAuthorityList(sysUser.getRole()));
+        }else{
+            throw  new UsernameNotFoundException("用户["+userName+"]不存在");
+>>>>>>> origin/master
         }
     }
 
     /**
      * 构建oAuth2用户，将角色和权限赋值给用户，角色使用ROLE_作为前缀
+<<<<<<< HEAD
      *
      * @param sysUser 系统用户
      * @return
@@ -75,6 +110,17 @@ public class UserDetailServiceImpl implements UserDetailsService {
         Set<String> authSet = new HashSet<>();
         List<String> roles = sysUser.getRoles();
         if (!CollectionUtils.isEmpty(roles)) {
+=======
+     * @author jianzhang11
+     * @date 2020/8/5 14:50
+     * @param sysUser 系统用户
+     * @return UserDetails
+     */
+   /* private UserDetails buildUserDetails(SysUser sysUser) {
+        Set<String> authSet = new HashSet<>();
+        List<String> roles = sysUser.getRoles();
+        if(!CollectionUtils.isEmpty(roles)){
+>>>>>>> origin/master
             roles.forEach(item -> authSet.add(Constant.ROLE_PREFIX + item));
             authSet.addAll(sysUser.getPermissions());
         }
