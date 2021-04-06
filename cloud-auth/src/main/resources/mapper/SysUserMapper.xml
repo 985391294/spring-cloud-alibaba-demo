@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<<<<<<< HEAD
 <mapper namespace="com.tqz.auth.mapper.SysUserMapper">
 
     <!-- 根据用户名查找用户 -->
@@ -12,15 +11,5 @@
     <select id="selectByMobile" resultType="com.tqz.auth.po.SysUser">
         select *  from sys_user WHERE MOBILE = #{mobile}
     </select>
-=======
-<mapper namespace="com.javadaily.auth.mapper.SysUserMapper">
-
-
-    <select id="selectByUserName"  resultType="com.javadaily.auth.po.SysUser">
-        select *  from sys_user WHERE USER_NAME = #{userName}
-    </select>
-
-
->>>>>>> origin/master
 
 </mapper>
