@@ -2,31 +2,37 @@
 mybatis-plus:
   mapper-locations: classpath:/mapper/*Mapper.xml
 
+### Spring Boot Oauth2 配置资源的id
 #security:
 #  oauth2:
 #    resource:
 #      id: account-service
+security:
+  oauth2:
+    resource:
+      user-info-uri: http://localhost:8050/user/current/get
+      id: account-service
 
-
+### 日志
 logging:
   level:
     root: info
     org.springframework.security: debug
 
-## swagger自定义配置属性
+### swagger自定义配置属性
 javadaily:
   swagger:
     enabled: true
     title: account-service在线接口平台
     description: account-service微服务相关接口
 
-
+### RocketMQ 配置
 rocketmq:
   name-server: 81.70.157.38:9876
   producer:
     group: cloud-group
 
-
+### seata 配置
 seata:
   enabled: true
   application-id: ${spring.application.name}-steata
@@ -51,6 +57,7 @@ seata:
 #  service:
 #    vgroup-mapping: seata-server-cluster
 
+### Spring Boot 健康监控
 management:
   endpoints:
     web:
@@ -60,5 +67,5 @@ management:
     health:
       show-details: always
     shutdown:
-      # 优雅停机，默认值为false，不建议开启
+    # 优雅停机，默认值为false，不建议开启
 #      enabled: true

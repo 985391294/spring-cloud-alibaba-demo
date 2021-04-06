@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tqz.auth.mapper.SysUserMapper">
+
+    <!-- 根据用户名查找用户 -->
+    <select id="selectByUserName"  resultType="com.tqz.auth.po.SysUser">
+        select *  from sys_user WHERE USER_NAME = #{userName}
+    </select>
+
+    <!-- 根据手机号查找 -->
+    <select id="selectByMobile" resultType="com.tqz.auth.po.SysUser">
+        select *  from sys_user WHERE MOBILE = #{mobile}
+    </select>
+
+</mapper>

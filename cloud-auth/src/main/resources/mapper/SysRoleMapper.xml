@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tqz.auth.mapper.SysRoleMapper">
+
+    <select id="listRolesByUserId" resultType="com.tqz.auth.po.SysRole">
+        select
+           role.*
+        from sys_user_role user_role
+        left JOIN sys_role role
+        on user_role.role_id = role.ID
+        where user_role.user_id = #{userId}
+    </select>
+
+</mapper>

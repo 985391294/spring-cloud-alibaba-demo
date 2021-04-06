@@ -86,11 +86,12 @@
             <artifactId>cloud-common</artifactId>
         </dependency>
 
-       <!-- <dependency>
-            <groupId>com.jianzh5.cloud</groupId>
-            <artifactId>cloud-security</artifactId>
+        <!-- Spring Cloud Oauth2 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-oauth2</artifactId>
         </dependency>
--->
+
     </dependencies>
 
     <build>

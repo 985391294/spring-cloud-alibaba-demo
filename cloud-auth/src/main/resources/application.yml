@@ -4,5 +4,11 @@ swagger:
     username: tianqingzhao
     password: 123456
 
-server:
-  port: 8090
+spring:
+  main:
+    ### 是否允许相同的bean存在，spring-boot中默认值为false，spring-framework中默认值为true
+    ### 如果不设置为true，根据beanName找到相同的bean，直接抛出异常，设置为true会覆盖之前的bean
+    allow-bean-definition-overriding: true
+
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*Mapper.xml

@@ -4,8 +4,6 @@ swagger:
     username: tianqingzhao
     password: 123456
 
-server:
-  port: 8090
 spring:
   cloud:
     gateway:

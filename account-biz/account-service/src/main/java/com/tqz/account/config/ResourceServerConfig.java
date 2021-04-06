@@ -1,22 +1,12 @@
-/*
 package com.tqz.account.config;
 
-import com.tqz.handler.CustomAccessDeniedHandler;
-import com.tqz.handler.CustomAuthenticationEntryPoint;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.actuate.autoconfigure.security.servlet.EndpointRequest;
-import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfigurerAdapter;
-import org.springframework.security.oauth2.config.annotation.web.configurers.ResourceServerSecurityConfigurer;
-import org.springframework.security.oauth2.provider.token.DefaultAccessTokenConverter;
-import org.springframework.security.oauth2.provider.token.TokenStore;
-import org.springframework.security.oauth2.provider.token.UserAuthenticationConverter;
-import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
-import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 
-
-*/
 /**
  * <p>
  * 资源服务器配置
@@ -24,13 +14,13 @@ import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
  *
  * @author tianqingzhao
  * @since 2021/3/1 9:48
- *//*
-//@Configuration
-//@EnableResourceServer
+ */
+@Configuration
+@EnableResourceServer
 public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 
     @Value("${security.oauth2.resource.id}")
-    private String resourceId ;
+    private String resourceId;
 
     @Override
     public void configure(HttpSecurity http) throws Exception {
@@ -38,22 +28,22 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
                 .authorizeRequests()
                 .requestMatchers(EndpointRequest.toAnyEndpoint()).permitAll()
                 .antMatchers(
-                    "/v2/api-docs/**",
-                    "/swagger-resources/**",
-                    "/swagger-ui.html",
-                    "/webjars/**"
-                    ).permitAll()
+                        "/v2/api-docs/**",
+                        "/swagger-resources/**",
+                        "/swagger-ui.html",
+                        "/webjars/**"
+                ).permitAll()
                 .anyRequest().authenticated()
                 .and()
                 //统一自定义异常
                 .exceptionHandling()
-                .authenticationEntryPoint(new CustomAuthenticationEntryPoint())
-                .accessDeniedHandler(new CustomAccessDeniedHandler())
+//                .authenticationEntryPoint(new CustomAuthenticationEntryPoint())
+//                .accessDeniedHandler(new CustomAccessDeniedHandler())
                 .and()
                 .csrf().disable();
     }
 
-    @Override
+/*    @Override
     public void configure(ResourceServerSecurityConfigurer resources) throws Exception {
         DefaultAccessTokenConverter accessTokenConverter = new DefaultAccessTokenConverter();
         UserAuthenticationConverter userTokenConverter = new CustomUserAuthenticationConverter();
@@ -61,16 +51,15 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 
         resources.resourceId(resourceId)
                 .tokenStore(tokenStore());
-    }
+    }*/
 
-    @Bean
+  /*  @Bean
     public TokenStore tokenStore() {
         return new JwtTokenStore(jwtTokenConverter());
-    }
+    }*/
 
-
-    @Bean
-    public JwtAccessTokenConverter jwtTokenConverter(){
+/*    @Bean
+    public JwtAccessTokenConverter jwtTokenConverter() {
         JwtAccessTokenConverter jwtAccessTokenConverter = new JwtAccessTokenConverter();
         jwtAccessTokenConverter.setSigningKey("javadaily");
         jwtAccessTokenConverter.setAccessTokenConverter(new CustomAccessTokenConverter());
@@ -78,9 +67,8 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
         return jwtAccessTokenConverter;
     }
 
-//    @Bean
-//    public UserAuthenticationConverter userAuthenticationConverter(){
-//        return new CustomTokenConverter();
-//    }
+    @Bean
+    public UserAuthenticationConverter userAuthenticationConverter() {
+        return new CustomTokenConverter();
+    }*/
 }
-*/

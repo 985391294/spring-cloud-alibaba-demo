@@ -9,7 +9,6 @@ import org.springframework.security.config.annotation.method.configuration.Globa
 /**
  * <p>
  * 开启方法校验
- * </p>
  *
  * @author tianqingzhao
  * @since 2021/3/1 9:48

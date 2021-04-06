@@ -16,7 +16,6 @@ import java.util.List;
 /**
  * <p>
  * 自定义Swagger资源,聚合其他服务的接口api
- * </p>
  *
  * @author tianqingzhao
  * @since 2021/3/1 17:48

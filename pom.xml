@@ -84,6 +84,7 @@
                 <version>${rocketmq.version}</version>
             </dependency>
 
+            <!-- Spring Boot 健康监控 -->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-actuator</artifactId>
@@ -122,7 +123,6 @@
                 <version>${swagger-bootstrap-ui.version}</version>
             </dependency>
 
-
             <!-- hutool工具包 -->
             <dependency>
                 <groupId>cn.hutool</groupId>
@@ -136,7 +136,6 @@
                 <artifactId>fastjson</artifactId>
                 <version>${alibaba.fastjson.version}</version>
             </dependency>
-
 
             <!-- cloud-common 版本 -->
             <dependency>
@@ -157,22 +156,8 @@
                 <version>1.0-SNAPSHOT</version>
             </dependency>
 
-            <!--    <dependency>
-           <groupId>com.jianzh5.cloud</groupId>
-           <artifactId>cloud-security</artifactId>
-           <version>${cloud-alibaba.version}</version>
-       </dependency>-->
-
         </dependencies>
     </dependencyManagement>
-
- <!--   <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
-            <version>${spring-boot.version}</version>
-        </dependency>
-    </dependencies>-->
 
     <build>
         <plugins>

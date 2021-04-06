@@ -1,4 +1,5 @@
-package com.tqz.account.config;
+package com.tqz.auth.config;
+
 import com.baomidou.mybatisplus.core.parser.ISqlParser;
 import com.baomidou.mybatisplus.extension.parsers.BlockAttackSqlParser;
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
@@ -12,21 +13,20 @@ import java.util.List;
 
 /**
  * <p>
- * Mybatis-Plus配置类
- * </p>
+ * Mybatis-Plus 配置
  *
  * @author tianqingzhao
- * @since 2021/2/26 9:54
+ * @since 2021/4/6 10:55
  */
 @Configuration
-@MapperScan("com.tqz.account.mapper")
+@MapperScan("com.tqz.auth.mapper")
 public class MybatisPlusConfig {
 
     /**
      * 攻击 SQL 阻断解析器
      */
     @Bean
-    public PaginationInterceptor paginationInterceptor(){
+    public PaginationInterceptor paginationInterceptor() {
         PaginationInterceptor paginationInterceptor = new PaginationInterceptor();
         List<ISqlParser> sqlParserList = new ArrayList<>();
         sqlParserList.add(new BlockAttackSqlParser());
@@ -34,6 +34,7 @@ public class MybatisPlusConfig {
         paginationInterceptor.setSqlParserList(sqlParserList);
         return new PaginationInterceptor();
     }
+
 
     /**
      * SQL执行效率插件

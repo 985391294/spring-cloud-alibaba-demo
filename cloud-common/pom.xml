@@ -39,10 +39,10 @@
         </dependency>-->
 
         <!-- spring oauth2 -->
- <!--       <dependency>
+        <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-oauth2</artifactId>
-        </dependency>-->
+        </dependency>
 
         <!-- servlet -->
         <dependency>
