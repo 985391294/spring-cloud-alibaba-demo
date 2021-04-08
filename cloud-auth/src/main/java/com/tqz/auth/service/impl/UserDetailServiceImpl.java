@@ -30,9 +30,10 @@ public class UserDetailServiceImpl implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
-        // 获取本地用户
+        // 根据用户名查询
         SysUser user = sysUserMapper.selectByUserName(userName);
         if (user != null) {
+            user.setRole("ADMIN");
             // 返回oauth2的用户
             return new org.springframework.security.core.userdetails.User(
                     user.getUsername(),

@@ -80,12 +80,6 @@
             <artifactId>account-feign</artifactId>
         </dependency>
 
-        <!-- cloud-common -->
-        <dependency>
-            <groupId>com.tqz</groupId>
-            <artifactId>cloud-common</artifactId>
-        </dependency>
-
         <!-- Spring Cloud Oauth2 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>

@@ -16,4 +16,10 @@
         <module>account-feign</module>
     </modules>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.tqz</groupId>
+            <artifactId>cloud-common</artifactId>
+        </dependency>
+    </dependencies>
 </project>

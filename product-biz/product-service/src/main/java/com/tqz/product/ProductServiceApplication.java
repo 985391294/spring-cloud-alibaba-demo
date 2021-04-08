@@ -6,7 +6,6 @@ import org.springframework.cloud.client.SpringCloudApplication;
 /**
  * <p>
  * product-service启动类
- * </p>
  *
  * @author tianqingzhao
  * @since 2021/2/25 10:15

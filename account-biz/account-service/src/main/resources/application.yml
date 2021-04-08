@@ -66,6 +66,6 @@ management:
   endpoint:
     health:
       show-details: always
-    shutdown:
+#    shutdown:
     # 优雅停机，默认值为false，不建议开启
 #      enabled: true

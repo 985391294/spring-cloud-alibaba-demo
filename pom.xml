@@ -147,7 +147,7 @@
                 <version>${cloud-common.version}</version>
             </dependency>
 
-            <!--<dependency>
+            <dependency>
                 <groupId>com.tqz</groupId>
                 <artifactId>account-feign</artifactId>
                 <version>1.0-SNAPSHOT</version>
@@ -157,7 +157,7 @@
                 <groupId>com.tqz</groupId>
                 <artifactId>product-feign</artifactId>
                 <version>1.0-SNAPSHOT</version>
-            </dependency>-->
+            </dependency>
 
         </dependencies>
     </dependencyManagement>

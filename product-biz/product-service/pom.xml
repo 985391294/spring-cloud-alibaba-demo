@@ -67,7 +67,6 @@
             <artifactId>mybatis-plus-boot-starter</artifactId>
         </dependency>
 
-        <!-- product-feign -->
         <dependency>
             <groupId>com.tqz</groupId>
             <artifactId>product-feign</artifactId>

@@ -1,6 +1,5 @@
 package com.tqz.account;
 
-import com.alibaba.csp.sentinel.transport.config.TransportConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.cloud.client.SpringCloudApplication;
 
@@ -11,6 +10,8 @@ import org.springframework.cloud.client.SpringCloudApplication;
  *      命令：java -jar -Dserver.port=8888 -Dcsp.sentinel.dashboard.server=localhost:8888 -Dproject.name=sentinel-dashboard sentinel-dashboard-1.8.0.jar
  *
  *  service.vgroupMapping.account_service_seata
+ *
+ *  linux的seata启动命令： <code>./seata-server.sh -h 81.70.157.38 -p 8091 -m db -n 1 >log.out &</code>
  *
  * @author tianqingzhao
  * @since 2021/2/23 10:26

@@ -11,13 +11,4 @@
 
     <artifactId>account-feign</artifactId>
 
-    <dependencies>
-
-        <dependency>
-            <groupId>com.tqz</groupId>
-            <artifactId>cloud-common</artifactId>
-        </dependency>
-
-    </dependencies>
-
 </project>

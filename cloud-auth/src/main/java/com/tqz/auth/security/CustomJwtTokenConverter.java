@@ -19,8 +19,8 @@ import java.util.Map;
  * 自定义Token增强
  * @author jianzh5
  * @date 2020/7/4 15:56
- *//*
-
+ */
+/*
 public class CustomJwtTokenConverter extends JwtAccessTokenConverter{
 
     @Override

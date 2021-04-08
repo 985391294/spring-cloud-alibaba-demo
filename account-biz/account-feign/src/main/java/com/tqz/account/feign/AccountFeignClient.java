@@ -5,7 +5,10 @@ import com.tqz.account.fallback.AccountFallbackFactory;
 import com.tqz.common.base.Constant;
 import com.tqz.common.base.ResultData;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.math.BigDecimal;
 

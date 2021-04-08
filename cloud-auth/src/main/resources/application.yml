@@ -10,5 +10,10 @@ spring:
     ### 如果不设置为true，根据beanName找到相同的bean，直接抛出异常，设置为true会覆盖之前的bean
     allow-bean-definition-overriding: true
 
+  security:
+    user:
+      name: tianqingzhao
+      password: 111111
+
 mybatis-plus:
   mapper-locations: classpath:/mapper/*Mapper.xml

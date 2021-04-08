@@ -58,6 +58,13 @@
             <groupId>com.tqz</groupId>
             <artifactId>cloud-common</artifactId>
         </dependency>
+
+        <!-- Spring Boot Test 单元测试 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+        </dependency>
+
     </dependencies>
 
 </project>

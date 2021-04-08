@@ -10,13 +10,22 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>order-biz</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>order-service</module>
+        <module>order-feign</module>
+    </modules>
 
     <dependencies>
-
         <!-- Spring Cloud OpenFeign -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.tqz</groupId>
+            <artifactId>cloud-common</artifactId>
         </dependency>
     </dependencies>
 </project>
