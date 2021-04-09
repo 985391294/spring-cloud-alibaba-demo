@@ -11,7 +11,7 @@ import org.springframework.cloud.client.SpringCloudApplication;
  *
  *  service.vgroupMapping.account_service_seata
  *
- *  linux的seata启动命令： <code>./seata-server.sh -h 81.70.157.38 -p 8091 -m db -n 1 >log.out &</code>
+ *  linux的seata启动命令： <code>./seata-server.sh -h ip -p 8091 -m db -n 1 >log.out &</code>
  *
  * @author tianqingzhao
  * @since 2021/2/23 10:26

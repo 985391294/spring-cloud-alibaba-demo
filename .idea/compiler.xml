@@ -7,7 +7,6 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="account-feign" />
-        <module name="order-biz" />
         <module name="cloud-common" />
         <module name="product-service" />
         <module name="order-service" />

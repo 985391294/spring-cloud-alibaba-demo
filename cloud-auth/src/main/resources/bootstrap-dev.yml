@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: cloud-auth
+  cloud:
+    nacos:
+      config:
+        server-addr: ip:端口号
+        file-extension: yml
+        namespace: 7a7e435c-73e4-4204-9191-72ee3d4a1767
+        group: DEFAULT_GROUP
+        prefix: ${spring.application.name}
+
