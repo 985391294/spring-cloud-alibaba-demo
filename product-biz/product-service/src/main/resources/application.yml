@@ -9,33 +9,15 @@ security:
 
 
 ## swagger自定义配置属性
-javadaily:
+tqz:
   swagger:
     enabled: true
     title: product-service在线接口平台
     description: product-service微服务相关接口
 
-
-seata:
-  enabled: true
-  application-id: ${spring.application.name}-seata
-  tx-service-group: product_service_group
-  enable-auto-data-source-proxy: true
-  config:
-    type: nacos
-    nacos:
-      namespace: 7a7e435c-73e4-4204-9191-72ee3d4a1767
-      serverAddr: 81.70.157.38:8848
-      group: SEATA_GROUP
-      userName: "nacos"
-      password: "tqz123456789."
-  registry:
-    type: nacos
-    nacos:
-      application: seata-server
-      server-addr: 81.70.157.38:8848
-      namespace: 7a7e435c-73e4-4204-9191-72ee3d4a1767
-      userName: "nacos"
-      password: "tqz123456789."
-#  service:
-#    vgroup-mapping: seata-server-cluster
+### Swagger 鉴权
+swagger:
+  basic:
+    enable: true
+    username: tianqingzhao
+    password: 123456
