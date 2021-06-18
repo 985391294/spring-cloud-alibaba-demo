@@ -2,12 +2,14 @@ package com.tqz.auth.controller;
 
 import com.tqz.auth.po.SysUser;
 import com.tqz.auth.service.ISysUserService;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.actuate.trace.http.HttpTrace;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.security.Principal;
 
 /**
  * <p>
@@ -16,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author tianqingzhao
  * @since 2021/4/6 10:45
  */
+@Api(value = "Auth模块的用户控制器", tags = "Auth模块的用户控制器")
 @RestController
 @RequestMapping("user")
 public class UserController {
@@ -31,7 +34,7 @@ public class UserController {
 
     @ApiOperation(value = "获取授权的用户信息", notes = "获取授权的用户信息")
     @GetMapping("current/get")
-    public HttpTrace.Principal user(HttpTrace.Principal principal) {
+    public Principal user(Principal principal) {
         return principal;
     }
 }

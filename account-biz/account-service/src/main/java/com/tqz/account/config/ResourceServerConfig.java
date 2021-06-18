@@ -1,12 +1,13 @@
+/*
 package com.tqz.account.config;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.actuate.autoconfigure.security.servlet.EndpointRequest;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfigurerAdapter;
 
+*/
 /**
  * <p>
  * 资源服务器配置
@@ -14,12 +15,13 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.R
  *
  * @author tianqingzhao
  * @since 2021/3/1 9:48
- */
+ *//*
+
 @Configuration
 @EnableResourceServer
 public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 
-    @Value("${security.oauth2.resource.id}")
+//    @Value("${security.oauth2.resource.id}")
     private String resourceId;
 
     @Override
@@ -31,18 +33,19 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
                         "/v2/api-docs/**",
                         "/swagger-resources/**",
                         "/swagger-ui.html",
-                        "/webjars/**"
-                ).permitAll()
-                .anyRequest().authenticated()
+                        "/webjars/**")
+                .permitAll()
+                .anyRequest()
+                .authenticated()
                 .and()
                 //统一自定义异常
                 .exceptionHandling()
-//                .authenticationEntryPoint(new CustomAuthenticationEntryPoint())
-//                .accessDeniedHandler(new CustomAccessDeniedHandler())
                 .and()
-                .csrf().disable();
+                .csrf()
+                .disable();
     }
 
+*/
 /*    @Override
     public void configure(ResourceServerSecurityConfigurer resources) throws Exception {
         DefaultAccessTokenConverter accessTokenConverter = new DefaultAccessTokenConverter();
@@ -51,13 +54,17 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 
         resources.resourceId(resourceId)
                 .tokenStore(tokenStore());
-    }*/
+    }*//*
 
-  /*  @Bean
+
+  */
+/*  @Bean
     public TokenStore tokenStore() {
         return new JwtTokenStore(jwtTokenConverter());
-    }*/
+    }*//*
 
+
+*/
 /*    @Bean
     public JwtAccessTokenConverter jwtTokenConverter() {
         JwtAccessTokenConverter jwtAccessTokenConverter = new JwtAccessTokenConverter();
@@ -70,5 +77,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
     @Bean
     public UserAuthenticationConverter userAuthenticationConverter() {
         return new CustomTokenConverter();
-    }*/
+    }*//*
+
 }
+*/

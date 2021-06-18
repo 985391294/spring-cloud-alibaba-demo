@@ -1,5 +1,7 @@
 package com.tqz.order.service.impl;
 
+import com.tqz.common.base.ResultData;
+import com.tqz.common.base.ReturnCode;
 import com.tqz.common.exception.ServiceException;
 import com.tqz.order.dto.OrderDTO;
 import com.tqz.order.mapper.OrderMapper;
@@ -7,27 +9,18 @@ import com.tqz.order.mapper.RocketMqTransactionLogMapper;
 import com.tqz.order.po.Order;
 import com.tqz.order.po.RocketmqTransactionLog;
 import com.tqz.order.service.OrderService;
-import com.tqz.common.base.ResultData;
-import com.tqz.common.base.Constant;
-import com.tqz.common.base.ReturnCode;
-import com.tqz.common.message.UserAddMoneyDTO;
 import io.seata.core.context.RootContext;
 import io.seata.spring.annotation.GlobalTransactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
-import org.apache.rocketmq.spring.core.RocketMQTemplate;
-import org.apache.rocketmq.spring.support.RocketMQHeaders;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
-
-import java.util.UUID;
 
 /**
  * <p>
@@ -44,7 +37,7 @@ import java.util.UUID;
 public class OrderServiceImpl implements OrderService {
 
     private final OrderMapper orderMapper;
-    private final RocketMQTemplate rocketMQTemplate;
+//    private final RocketMQTemplate rocketMQTemplate;
     private final RocketMqTransactionLogMapper rocketMqTransactionLogMapper;
     private final RestTemplate restTemplate;
 
@@ -118,7 +111,7 @@ public class OrderServiceImpl implements OrderService {
     public void delete(String orderNo) {
         Order order = orderMapper.selectByNo(orderNo);
         //如果订单存在且状态为有效，进行业务处理
-        if (order != null && Constant.VALID_STATUS.equals(order.getStatus())) {
+   /*     if (order != null && Constant.VALID_STATUS.equals(order.getStatus())) {
             String transactionId = UUID.randomUUID().toString();
             //如果可以删除订单则发送消息给rocketmq，让用户中心消费消息
 
@@ -136,6 +129,6 @@ public class OrderServiceImpl implements OrderService {
             );
 
 //            changeStatus(order.getId(), CloudConstant.INVALID_STATUS);
-        }
+        }*/
     }
 }

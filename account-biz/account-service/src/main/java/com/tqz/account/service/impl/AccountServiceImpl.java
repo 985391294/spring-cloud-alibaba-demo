@@ -1,7 +1,7 @@
 package com.tqz.account.service.impl;
 
-import com.tqz.account.mapper.AccountMapper;
 import com.tqz.account.dto.AccountDTO;
+import com.tqz.account.mapper.AccountMapper;
 import com.tqz.account.po.Account;
 import com.tqz.account.service.AccountService;
 import com.tqz.common.base.ResultData;
@@ -12,9 +12,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.client.RestTemplate;
 
-import javax.xml.transform.Result;
 import java.math.BigDecimal;
 
 /**

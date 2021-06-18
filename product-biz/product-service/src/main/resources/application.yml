@@ -21,3 +21,7 @@ swagger:
     enable: true
     username: tianqingzhao
     password: 123456
+
+seata:
+  service:
+    vgroup-mapping:

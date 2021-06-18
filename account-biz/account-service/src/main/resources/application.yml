@@ -3,11 +3,11 @@ mybatis-plus:
   mapper-locations: classpath:/mapper/*Mapper.xml
 
 ### Spring Boot Oauth2 配置资源的id
-security:
-  oauth2:
-    resource:
-      user-info-uri: http://localhost:8050/user/current/get
-      id: account-service
+#security:
+#  oauth2:
+#    resource:
+#      user-info-uri: http://localhost:8050/user/current/get
+#      id: account-service
 
 ### 日志
 logging:

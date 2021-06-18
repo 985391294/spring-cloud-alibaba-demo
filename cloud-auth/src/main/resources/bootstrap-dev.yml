@@ -9,4 +9,6 @@ spring:
         namespace: 7a7e435c-73e4-4204-9191-72ee3d4a1767
         group: DEFAULT_GROUP
         prefix: ${spring.application.name}
+        username: nacos
+        password: nacos
 

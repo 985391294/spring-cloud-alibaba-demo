@@ -1,3 +1,4 @@
+/*
 package com.tqz.order.listener;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
@@ -15,6 +16,7 @@ import org.springframework.messaging.MessageHeaders;
 import com.tqz.order.service.*;
 import com.tqz.order.po.*;
 
+*/
 /**
  * <p>
  * 监听事务消息
@@ -22,7 +24,8 @@ import com.tqz.order.po.*;
  *
  * @author tianqingzhao
  * @since 2021/2/26 10:00
- */
+ *//*
+
 @Slf4j
 @RocketMQTransactionListener
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
@@ -31,9 +34,11 @@ public class AddUserAmountListener implements RocketMQLocalTransactionListener {
     private final OrderService orderService;
     private final RocketMqTransactionLogMapper rocketMqTransactionLogMapper;
 
-    /**
+    */
+/**
      * 执行本地事务
-     */
+     *//*
+
     @Override
     public RocketMQLocalTransactionState executeLocalTransaction(Message message, Object arg) {
         log.info("执行本地事务");
@@ -53,9 +58,11 @@ public class AddUserAmountListener implements RocketMQLocalTransactionListener {
         }
     }
 
-    /**
+    */
+/**
      * 本地事务的检查，检查本地事务是否成功
-     */
+     *//*
+
     @Override
     public RocketMQLocalTransactionState checkLocalTransaction(Message message) {
 
@@ -73,3 +80,4 @@ public class AddUserAmountListener implements RocketMQLocalTransactionListener {
         return RocketMQLocalTransactionState.ROLLBACK;
     }
 }
+*/

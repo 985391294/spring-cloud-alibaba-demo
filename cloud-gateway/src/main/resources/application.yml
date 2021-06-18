@@ -35,3 +35,5 @@ spring:
     password: 123456
     database: 0
     port: 6379
+  main:
+    allow-bean-definition-overriding: true

@@ -56,11 +56,11 @@ public class ProductController {
         return ResultData.success("update product succeed");
     }
 
-    @GetMapping("/getByCode/{productCode}")
-    @SentinelResource(value = "/product/getByCode", fallback = "fallbackHandler")
+    @GetMapping("/getByCode")
+    @SentinelResource(value = "/product/getByCode", /*blockHandler = "handlerException",*/ fallback = "fallbackHandler")
     @ApiOperation(value = "根据产品编码查找对应的产品")
     @ApiImplicitParam(name = "productCode", value = "产品编码", required = true, paramType = "path")
-    public ResultData<ProductDTO> getByCode(@PathVariable String productCode) {
+    public ResultData<ProductDTO> getByCode(String productCode) {
         log.info("get product detail,productCode is :{}", productCode);
         ProductDTO productDTO = productService.selectByCode(productCode);
         return ResultData.success(productDTO);
@@ -76,6 +76,11 @@ public class ProductController {
         log.info("deduct product, productCode is :{},count is {} ", productCode, count);
         return productService.deduct(productCode, count);
     }
+
+  /*  public ResultData<ProductDTO> handlerException(String productCode, BlockException blockException) {
+        log.info("flow exception{}", blockException.getClass().getCanonicalName());
+        return ResultData.fail(900, "达到阈值了,不要再访问了!");
+    }*/
 
     /**
      * 自定义熔断异常，返回值和参数要跟目标函数一样

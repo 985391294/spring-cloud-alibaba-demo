@@ -32,6 +32,12 @@
             <optional>true</optional>
         </dependency>
 
+        <!-- Spring Boot 健康监控 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
         <!--spring security-->
         <!--<dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -39,10 +45,12 @@
         </dependency>-->
 
         <!-- spring oauth2 -->
+<!--
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-oauth2</artifactId>
         </dependency>
+-->
 
         <!-- servlet -->
         <dependency>
@@ -75,14 +83,6 @@
             <groupId>com.github.xiaoymin</groupId>
             <artifactId>swagger-bootstrap-ui</artifactId>
         </dependency>
-
-        <!-- Spring Boot 健康监控 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
-            <version>${spring-boot.version}</version>
-        </dependency>
-
 
     </dependencies>
 </project>

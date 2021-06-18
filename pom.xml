@@ -13,8 +13,6 @@
         <module>cloud-common</module>
         <module>product-biz</module>
         <module>order-biz</module>
-        <module>order-biz/order-service</module>
-        <module>order-biz/order-feign</module>
         <module>cloud-gateway</module>
         <module>cloud-auth</module>
     </modules>
